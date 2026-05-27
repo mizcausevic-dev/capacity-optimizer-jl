@@ -36,3 +36,7 @@ Julia optimization surface for constrained capacity planning, lane allocation, a
 Kinetic Gain Embedded tie-back:
 
 This repo proves Kinetic Gain can ship auditable planning and optimization logic in Julia, not just render dashboards around it. The language-atlas signal is real: model, verify, and publish the same operator surface from Julia code.
+
+---
+
+Part of the [Kinetic Gain Protocol Suite](https://suite.kineticgain.com/) operator portfolio · apex: [kineticgain.com](https://kineticgain.com) · live: [capacity.kineticgain.com](https://capacity.kineticgain.com/)
