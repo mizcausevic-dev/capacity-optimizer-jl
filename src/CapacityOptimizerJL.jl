@@ -376,6 +376,7 @@ function overview_content(result::Dict)
     <footer>
       <span>capacity-optimizer-jl · Julia 1.12</span>
       <span><a href="/docs/">Docs</a> · <a href="/verification/">Verification</a></span>
+      <span><a href="https://github.com/mizcausevic-dev/">GitHub</a> · <a href="https://www.linkedin.com/in/mirzacausevic/">LinkedIn</a> · <a href="https://kineticgain.com/">Kinetic Gain</a></span>
     </footer>
     """
 end
