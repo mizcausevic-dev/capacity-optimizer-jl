@@ -269,6 +269,17 @@ end
 
 status_badge(status::String) = "<span class=\"status $(status == "green" ? "green" : status == "yellow" ? "warn" : "bad")\">$(uppercase(status))</span>"
 
+function site_footer(context::String)
+    return """
+    <footer>
+      <span>$(escape_html(context))</span>
+      <span><a href="https://capacity.kineticgain.com/">capacity.kineticgain.com</a></span>
+      <span><a href="https://portfolio.kineticgain.com/">Portfolio</a> · <a href="https://suite.kineticgain.com/">Suite</a> · <a href="https://github.com/mizcausevic-dev/capacity-optimizer-jl">Repo</a></span>
+      <span><a href="https://www.linkedin.com/in/mirzacausevic/">LinkedIn</a> · <a href="https://kineticgain.com/">Kinetic Gain</a></span>
+    </footer>
+    """
+end
+
 function overview_content(result::Dict)
     lane_rows = join([
         """
@@ -368,16 +379,54 @@ function overview_content(result::Dict)
       </div>
     </section>
 
+    <section class="section">
+      <div class="sh"><h2>Product depth</h2><div class="note">SaaS value architecture and GTM posture</div></div>
+      <div class="cards">
+        <div class="card">
+          <div class="eyebrow">Executive buyer value</div>
+          <h3>Capacity becomes a defendable tradeoff.</h3>
+          <p>Operators can see which constrained lanes protect margin, which packets remain unserved, and where backlog risk is becoming a customer-facing promise problem.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Technical proof</div>
+          <h3>Julia owns the decision logic.</h3>
+          <p>The same dependency-light optimization core generates the allocation plan, facility posture, JSON API output, route pages, sitemap, and verification path, keeping the public proof inspectable.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Commercial motion</div>
+          <h3>From model to planning packet.</h3>
+          <p>This can support capacity-planning briefings, backlog-recovery packets, facility tradeoff workshops, and embedded optimization surfaces for operators who need explainable allocation decisions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="sh"><h2>What these repos have in common</h2><div class="note">Kinetic Gain operating pattern</div></div>
+      <div class="cards">
+        <div class="card">
+          <div class="eyebrow">Risk</div>
+          <h3>Name the constraint.</h3>
+          <p>Each repo turns hidden operational drag into a concrete risk surface with status, scoring, owner-readable context, and next-action language.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Proof</div>
+          <h3>Ship evidence with the story.</h3>
+          <p>The product narrative, synthetic data contract, generated routes, sitemap, screenshots, and validation scripts stay together so the claim is inspectable.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Action</div>
+          <h3>Make the next move clear.</h3>
+          <p>The goal is not another chart. It is an operator-usable and buyer-readable control plane for what to allocate, defer, escalate, or package next.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="quote">
       <div class="lbl">why this matters</div>
       <div class="q">Kinetic Gain Embedded tie-back: this repo proves the portfolio can carry optimization and planning logic in Julia while still publishing the same buyer-readable operator surface language.</div>
     </section>
 
-    <footer>
-      <span>capacity-optimizer-jl · Julia 1.12</span>
-      <span><a href="/docs/">Docs</a> · <a href="/verification/">Verification</a></span>
-      <span><a href="https://github.com/mizcausevic-dev/">GitHub</a> · <a href="https://www.linkedin.com/in/mirzacausevic/">LinkedIn</a> · <a href="https://kineticgain.com/">Kinetic Gain</a></span>
-    </footer>
+    $(site_footer("capacity-optimizer-jl · Julia 1.12"))
     """
 end
 
@@ -395,6 +444,7 @@ function generic_content(title::String, note::String, body::Vector{String}; back
       <ul style="color:var(--muted);line-height:1.8">$(bullet_html)</ul>
       <p><a href="$(back)">Return to the overview</a></p>
     </section>
+    $(site_footer(lowercase(title) * " · capacity optimizer"))
     """
 end
 
